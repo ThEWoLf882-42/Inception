@@ -1,4 +1,4 @@
-#baseURL = "https://vbachele.42.fr/me"
+#baseURL = "https://agimi.42.fr/me"
 theme = "m10c"
 paginate = 8
 canonifyURLs = true

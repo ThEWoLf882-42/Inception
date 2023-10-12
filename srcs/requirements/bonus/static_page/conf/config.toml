@@ -1,5 +1,5 @@
-#baseURL = "https://vbachele.42.fr/static"
-title = "42 fitness"
+#baseURL = "https://agimi.42.fr/static"
+title = "1337 fitness"
 theme = "m10c"
 paginate = 8
 canonifyURLs = true
@@ -18,7 +18,7 @@ canonifyURLs = true
 
 [params]
   author = "Vincent Bachelet"
-  description = "Student @42Paris && fitness addict"
+  description = "Student @1337MED && fitness addict"
   menu_item_separator = " - "
   [[params.social]]
     icon = "github"
