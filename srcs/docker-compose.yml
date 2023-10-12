@@ -19,11 +19,10 @@ services:
   mariadb:
     container_name: mariadb
     build: ./requirements/mariadb
-    #volumes allow to store in a persistent disk the content in a local disk
-    #db_data is a volume created by docker directly
+
     volumes:
       - mariadb_data:/var/lib/mysql
-    # in case of problem we restart automatically the container
+
     networks:
       - network
     restart: always
@@ -32,7 +31,7 @@ services:
 
   wordpress:
     container_name: wordpress
-    #Create a depedency between the 2 container, db will be launched before
+
     depends_on:
       - mariadb
     build:
@@ -46,7 +45,6 @@ services:
     networks:
       - network
 
-#BONUS PART
   redis:
     container_name: redis
     build: ./requirements/bonus/redis
