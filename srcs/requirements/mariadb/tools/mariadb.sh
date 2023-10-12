@@ -15,8 +15,8 @@ else
 mysql_secure_installation << _EOF_
 
 Y
-root4life
-root4life
+882root
+882root
 Y
 n
 Y
