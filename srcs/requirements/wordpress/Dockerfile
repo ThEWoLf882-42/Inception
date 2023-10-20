@@ -1,21 +1,22 @@
-FROM alpine:3.16
-ARG DB_NAME \
+FROM alpine:3.18
+ARG PHP_VERSION=8.2 \
+    DB_NAME \
     DB_USER \
     DB_PASS
 RUN apk update && apk upgrade && apk add --no-cache \
-    php \
-    php-fpm \
-    php-mysqli \
-    php-json \
-    php-curl \
-    php-dom \
-    php-exif \
-    php-fileinfo \
-    php-mbstring \
-    php-openssl \
-    php-xml \
-    php-zip \
-    php-redis \
+    php$ \
+    php$-fpm \
+    php$-mysqli \
+    php$-json \
+    php$-curl \
+    php$-dom \
+    php$-exif \
+    php$-fileinfo \
+    php$-mbstring \
+    php$-openssl \
+    php$-xml \
+    php$-zip \
+    php${PHP_VERSION}-redis \
     wget \
     unzip && \
     sed -i "s|listen = 127.0.0.1:9000|listen = 9000|g" \
