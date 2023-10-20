@@ -4,18 +4,18 @@ ARG PHP_VERSION=8.2 \
     DB_USER \
     DB_PASS
 RUN apk update && apk upgrade && apk add --no-cache \
-    php$ \
-    php$-fpm \
-    php$-mysqli \
-    php$-json \
-    php$-curl \
-    php$-dom \
-    php$-exif \
-    php$-fileinfo \
-    php$-mbstring \
-    php$-openssl \
-    php$-xml \
-    php$-zip \
+    php \
+    php-fpm \
+    php-mysqli \
+    php-json \
+    php-curl \
+    php-dom \
+    php-exif \
+    php-fileinfo \
+    php-mbstring \
+    php-openssl \
+    php-xml \
+    php-zip \
     php${PHP_VERSION}-redis \
     wget \
     unzip && \
