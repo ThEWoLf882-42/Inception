@@ -28,8 +28,8 @@ services:
         DB_PASS: ${DB_PASS}
         DB_ROOT: ${DB_ROOT}
     container_name: mariadb
-    expose:
-      - "3306"
+    ports:
+      - "3306:3306"
     networks:
       - inception
     restart: always
@@ -43,8 +43,6 @@ services:
         DB_USER: ${DB_USER}
         DB_PASS: ${DB_PASS}
     container_name: wordpress
-    expose:
-      - "9000"
     depends_on:
       - mariadb
     restart: always
