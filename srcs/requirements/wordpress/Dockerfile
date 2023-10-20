@@ -1,4 +1,4 @@
-FROM alpine:3.18
+FROM alpine:3.17
 ARG DB_NAME \
     DB_USER \
     DB_PASS
@@ -15,6 +15,7 @@ RUN apk update && apk upgrade && apk add --no-cache \
     php-openssl \
     php-xml \
     php-zip \
+    php-redis \
     wget \
     unzip && \
     sed -i "s|listen = 127.0.0.1:9000|listen = 9000|g" \
