@@ -1,8 +1,0 @@
-#baseURL = "https://agimi.42.fr/me"
-theme = "m10c"
-paginate = 8
-canonifyURLs = true
-
-[params]
-  author = "Aymane Gimi"
-  description = "Dedicated hugo service for inception project"
