@@ -1,4 +1,5 @@
 .vscode
 .DS_Store
+.env
 agimi.42.fr.crt
 agimi.42.fr.key
