@@ -23,7 +23,7 @@ clean: down
 	@sudo rm -rf ~/data/wordpress/*
 	@sudo rm -rf ~/data/mariadb/*
 
-fclean:
+fclean: clean
 	@printf "Total clean of all configurations docker\n"
 	@docker stop $(docker ps -q) || true
 	@docker system prune --all --force --volumes
