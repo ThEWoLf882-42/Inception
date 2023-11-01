@@ -28,8 +28,6 @@ services:
         DB_PASS: ${DB_PASS}
         DB_ROOT: ${DB_ROOT}
     container_name: mariadb
-    # ports:
-    #   - "3306:3306"
     expose:
       - 3306
     networks:
@@ -99,14 +97,14 @@ services:
      - inception
     restart: always
 
-  website:
-    build:
-      context: .
-      dockerfile: requirements/bonus/website/Dockerfile
-    container_name: website
-    ports:
-      - "80:80"
-    restart: always
+  # website:
+  #   build:
+  #     context: .
+  #     dockerfile: requirements/bonus/website/Dockerfile
+  #   container_name: website
+  #   ports:
+  #     - "80:80"
+  #   restart: always
 
 volumes:
   wp-volume:
