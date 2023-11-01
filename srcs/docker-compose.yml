@@ -28,8 +28,10 @@ services:
         DB_PASS: ${DB_PASS}
         DB_ROOT: ${DB_ROOT}
     container_name: mariadb
-    ports:
-      - "3306:3306"
+    # ports:
+    #   - "3306:3306"
+    expose:
+      - "3306"
     networks:
       - inception
     volumes:
@@ -60,8 +62,10 @@ services:
     container_name: redis
     depends_on:
       - wordpress
-    ports:
-      - "6379:6379"
+    # ports:
+    #   - "6379:6379"
+    expose:
+      - "6379"
     networks:
       - inception
     restart: always
@@ -76,8 +80,10 @@ services:
     container_name: vsftpd
     depends_on:
       - wordpress
-    ports:
-      - "21:21"
+    # ports:
+    #   - "21:21"
+    expose:
+      - "21"
     volumes:
       - wp-volume:/var/www/
     networks:
@@ -91,8 +97,10 @@ services:
     container_name: adminer
     depends_on:
       - mariadb
-    ports:
-      - "8080:8080"
+    # ports:
+    #   - "8080:8080"
+    expose:
+      - "8080"
     networks:
      - inception
     restart: always
