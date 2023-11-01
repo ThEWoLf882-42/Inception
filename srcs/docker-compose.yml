@@ -16,6 +16,7 @@ services:
       - ./requirements/nginx/conf/:/etc/nginx/http.d/
       - ./requirements/nginx/tools:/etc/nginx/ssl/
       - wp-volume:/var/www/
+      - ./requirements/bonus/website/conf:/var/www/agimi
     restart: always
 
   mariadb:
@@ -96,15 +97,6 @@ services:
     networks:
      - inception
     restart: always
-
-  # website:
-  #   build:
-  #     context: .
-  #     dockerfile: requirements/bonus/website/Dockerfile
-  #   container_name: website
-  #   ports:
-  #     - "80:80"
-  #   restart: always
 
 volumes:
   wp-volume:
