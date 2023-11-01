@@ -62,10 +62,8 @@ services:
     container_name: redis
     depends_on:
       - wordpress
-    # ports:
-    #   - "6379:6379"
-    expose:
-      - 6379
+    ports:
+      - "6379:6379"
     networks:
       - inception
     restart: always
@@ -80,10 +78,8 @@ services:
     container_name: vsftpd
     depends_on:
       - wordpress
-    # ports:
-    #   - "21:21"
-    expose:
-      - 21
+    ports:
+      - "21:21"
     volumes:
       - wp-volume:/var/www/
     networks:
@@ -97,8 +93,6 @@ services:
     container_name: adminer
     depends_on:
       - mariadb
-    # ports:
-    #   - "8080:8080"
     expose:
       - 8080
     networks:
