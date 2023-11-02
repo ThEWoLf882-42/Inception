@@ -35,7 +35,7 @@ COPY ./requirements/wordpress/conf/wp-config-create.sh .
 RUN sh wp-config-create.sh && rm wp-config-create.sh && \
     chmod -R 0777 wp-content/
 COPY ./requirements/wordpress/tools/woo.sh woo.sh
-RUN chmod +x /woo.sh
+RUN chmod +x woo.sh
 
 ENTRYPOINT [ "woo.sh" ]
 CMD ["/usr/sbin/php-fpm8", "-F"]
