@@ -6,4 +6,4 @@ then
 else
     echo "redis-cache is already installed"
 fi
-exec $@
+exec /usr/sbin/php-fpm8 -F
