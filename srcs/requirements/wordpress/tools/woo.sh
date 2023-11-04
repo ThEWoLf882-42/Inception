@@ -1,7 +1,6 @@
-chmod -R 755 /var/www/html
 echo Installing wordpress
-cd /var/www/html
-ls /var/www/html | grep wp-config.php
+cd /var/www/
+ls /var/www/ | grep wp-config.php
 if [ $? -eq 0 ]
 then
     echo "Found Wordpress, skipping"
