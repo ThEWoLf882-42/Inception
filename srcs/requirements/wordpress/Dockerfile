@@ -40,7 +40,7 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 	chmod +x wp-cli.phar && \
 	mv wp-cli.phar /usr/local/bin/wp
 
-COPY tools/woo.sh /woo.sh
+COPY ./requirements/wordpress/tools/woo.sh /woo.sh
 RUN chmod +x /woo.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
