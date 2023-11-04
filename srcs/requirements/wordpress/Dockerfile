@@ -40,6 +40,6 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 	chmod +x wp-cli.phar && \
 	mv wp-cli.phar /usr/local/bin/wp
 
-# RUN wp core install --path=/var/www --url=agimi.42.fr --title=WP_TITLE --admin_user=WP_ADMIN --admin_password=WP_PASS --admin_email=WP_EMAIL
+RUN wp core install --url=agimi.42.fr --title=&{WP_TITLE} --admin_user=&{WP_ADMIN} --admin_password=&{WP_PASS} --admin_email=&{WP_EMAIL}
 
 CMD ["/usr/sbin/php-fpm8", "-F"]
