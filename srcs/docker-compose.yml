@@ -44,6 +44,10 @@ services:
         DB_NAME: ${DB_NAME}
         DB_USER: ${DB_USER}
         DB_PASS: ${DB_PASS}
+        WP_TITLE: ${WP_TITLE}
+        WP_ADMIN: ${WP_ADMIN}
+        WP_PASS: ${WP_PASS}
+        WP_EMAIL: ${WP_EMAIL}
     container_name: wordpress
     expose:
       - 9000
