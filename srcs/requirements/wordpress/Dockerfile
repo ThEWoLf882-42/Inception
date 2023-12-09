@@ -6,12 +6,15 @@ ARG PHP_VERSION=8 \
 	WP_TITLE \
 	WP_ADMIN \
 	WP_PASS \
-	WP_EMAIL
+	WP_EMAIL \
+	WP_USER
 
 ENV WP_TITLE=${WP_TITLE} \
 	WP_ADMIN=${WP_ADMIN} \
 	WP_PASS=${WP_PASS} \
-	WP_EMAIL=${WP_EMAIL}
+	WP_EMAIL=${WP_EMAIL} \
+	WP_USER=${WP_USER}
+
 
 RUN apk update && apk upgrade && apk add --no-cache \
 	php${PHP_VERSION} \
