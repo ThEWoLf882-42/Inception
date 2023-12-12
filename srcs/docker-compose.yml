@@ -49,6 +49,7 @@ services:
         WP_USER: ${WP_USER}
         WP_PASS: ${WP_PASS}
         WP_EMAIL: ${WP_EMAIL}
+        WP_UEMAIL: ${WP_UEMAIL}
     container_name: wordpress
     expose:
       - 9000
