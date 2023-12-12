@@ -5,7 +5,7 @@ wp core install --path=/var/www --url=agimi.42.fr --title="${WP_TITLE}" --admin_
 wp config set WP_REDIS_PORT "6379" --allow-root
 wp config set WP_REDIS_HOST "redis" --allow-root
 wp plugin is-installed redis-cache --allow-root
-wp user create ${WP_USER} ${WP_EMAIL} --user_pass=${WP_PASS} --role=editor
+wp user create "${WP_USER}" "${WP_EMAIL}" --user_pass="${WP_PASS}" --role=editor
 
 if [ $? -eq 1 ]
 then
