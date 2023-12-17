@@ -1,10 +1,9 @@
-FROM alpine:3.16
+FROM alpine:3.19
 
 ARG PHP_VERSION=8
 
 RUN apk update && apk upgrade && apk add --no-cache \
     php${PHP_VERSION} \
-    php${PHP_VERSION}-fpm \
     php${PHP_VERSION}-common \
     php${PHP_VERSION}-session \
     php${PHP_VERSION}-iconv \
