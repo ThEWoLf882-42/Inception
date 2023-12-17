@@ -105,16 +105,16 @@ services:
      - inception
     restart: always
 
-  website:
-    build:
-      context: .
-      dockerfile: requirements/bonus/website/Dockerfile
-    container_name: website
-    ports:
-      - "80:80"
-    volumes:
-      - ./requirements/bonus/website/conf/web:/var/www/
-    restart: always
+  # website:
+  #   build:
+  #     context: .
+  #     dockerfile: requirements/bonus/website/Dockerfile
+  #   container_name: website
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./requirements/bonus/website/conf/web:/var/www/
+  #   restart: always
 
 volumes:
   wp-volume:
