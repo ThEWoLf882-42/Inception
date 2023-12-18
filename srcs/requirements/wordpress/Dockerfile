@@ -18,8 +18,20 @@ ENV WP_TITLE=${WP_TITLE} \
 
 
 RUN apk update && apk upgrade && apk add --no-cache \
-	php\
-	php-fpm\
+	php \
+	php-fpm \
+	php-mysqli \
+	php-json \
+	php-curl \
+	php-dom \
+	php-exif \
+	php-fileinfo \
+	php-mbstring \
+	php-openssl \
+	php-xml \
+	php-zip \
+	php-redis \
+	php-phar \
 	wget \
 	unzip && \
 	sed -i "s|listen = 127.0.0.1:9000|listen = 0.0.0.0:9000|g" \
