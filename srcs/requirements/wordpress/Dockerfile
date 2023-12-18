@@ -50,4 +50,4 @@ COPY ./requirements/wordpress/tools/woo.sh ../woo.sh
 RUN chmod +x ../woo.sh
 
 ENTRYPOINT [ "../woo.sh" ]
-CMD ["/usr/sbin/php-fpm8", "-F"]
+CMD ["/usr/sbin/php-fpm82", "-F"]
