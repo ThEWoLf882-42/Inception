@@ -2,7 +2,25 @@ FROM alpine:3.19.0
 
 
 RUN apk update && apk upgrade && apk add --no-cache \
-    php\
+    php \
+    php-common \
+    php-session \
+    php-iconv \
+    php-gd \
+    php-curl \
+    php-xml \
+    php-mysqli \
+    php-imap \
+    php-cgi \
+    php-pdo \
+    php-pdo_mysql \
+    php-soap \
+    php-posix \
+    php-gettext \
+    php-ldap \
+    php-ctype \
+    php-dom \
+    php-simplexml \
     wget
 
 WORKDIR /var/www
