@@ -2,6 +2,7 @@ FROM alpine:3.19.0
 
 
 RUN apk update && apk upgrade && apk add --no-cache \
+    php\
     wget
 
 WORKDIR /var/www
