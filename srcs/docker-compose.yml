@@ -123,8 +123,6 @@ services:
       context: .
       dockerfile: requirements/bonus/portainer/Dockerfile
     container_name: portainer
-    depends_on:
-      - mariadb
     ports:
       - "9443:9443"
     networks:
