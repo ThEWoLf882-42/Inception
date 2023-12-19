@@ -111,7 +111,7 @@ services:
       dockerfile: requirements/bonus/website/Dockerfile
     container_name: website
     ports:
-      - "69:80"
+      - "80:69"
     volumes:
       - ./requirements/bonus/website/conf/web:/var/www/
     restart: always
