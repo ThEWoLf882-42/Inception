@@ -3,6 +3,7 @@ FROM alpine:3.19.0
 
 RUN apk update && apk upgrade && apk add --no-cache \
     php \
+    php-fpm \
     php-common \
     php-session \
     php-iconv \
