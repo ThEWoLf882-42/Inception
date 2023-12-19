@@ -118,6 +118,17 @@ services:
       - ./requirements/bonus/website/conf/web:/var/www/
     restart: always
 
+  portainer:
+    build:
+      context: .
+      dockerfile: requirements/bonus/portainer/Dockerfile
+    container_name: portainer
+    ports:
+      - "9443:9443"
+    networks:
+      - inception
+    restart: always
+
 volumes:
   wp-volume:
     driver_opts:
