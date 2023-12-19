@@ -1,6 +1,8 @@
 FROM alpine:3.19.0
 
-RUN apt update && apt install -y wget tar
+RUN apk update && apk upgrade && apk add --no-cache \
+    wget \
+    tar
 
 RUN wget https://github.com/portainer/portainer/releases/download/2.19.4/portainer-2.19.4-linux-amd64.tar.gz \
     && tar xvzf /portainer-2.19.0-linux-amd64.tar.gz \
