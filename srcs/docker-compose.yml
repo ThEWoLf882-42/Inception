@@ -127,6 +127,9 @@ services:
       - "9443:9443"
     networks:
       - inception
+    volumes:
+      - portainer:/data
+      - /var/run/docker.sock:/var/run/docker.sock
     restart: always
 
 volumes:
@@ -141,6 +144,12 @@ volumes:
       o: bind
       type: none
       device: /home/${USER}/data/mariadb
+  
+  portainer:
+   driver_opts:
+    o: bind
+    type: none
+    device: /home/${USER}/data/portainer
 
 networks:
   inception:

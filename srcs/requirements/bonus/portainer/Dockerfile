@@ -1,11 +1,10 @@
 FROM alpine:3.19.0
 
-RUN apk --no-cache add curl
+RUN apt update && apt install -y wget tar
 
-RUN curl -L https://downloads.portainer.io/portainer-ce/portainer-ce_linux_amd64.tar.gz -o portainer.tar.gz \
-    && tar -xvf portainer.tar.gz \
-    && rm portainer.tar.gz \
-    && mv portainer-ce* /portainer
+RUN wget https://github.com/portainer/portainer/releases/download/2.19.4/portainer-2.19.4-linux-amd64.tar.gz \
+    && tar xvzf /portainer-2.19.0-linux-amd64.tar.gz \
+    && rm -rf portainer-2.19.0-linux-amd64.tar.gz
 
 EXPOSE 9443
 
