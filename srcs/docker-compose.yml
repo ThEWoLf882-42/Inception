@@ -111,7 +111,7 @@ services:
       dockerfile: requirements/bonus/website/Dockerfile
     container_name: website
     ports:
-      - "69:69"
+      - "80:80"
     networks:
       - inception
     volumes:
