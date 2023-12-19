@@ -112,6 +112,8 @@ services:
     container_name: website
     ports:
       - "69:69"
+    networks:
+      - inception
     volumes:
       - ./requirements/bonus/website/conf/web:/var/www/
     restart: always
