@@ -89,7 +89,7 @@ services:
     volumes:
       - wp-volume:/var/www/
     networks:
-     - inception
+      - inception
     restart: always
 
   adminer:
@@ -102,7 +102,7 @@ services:
     ports:
       - "8080:8080"
     networks:
-     - inception
+      - inception
     restart: always
 
   website:
@@ -111,7 +111,7 @@ services:
       dockerfile: requirements/bonus/website/Dockerfile
     container_name: website
     ports:
-      - "69:69"
+      - "69:80"
     volumes:
       - ./requirements/bonus/website/conf/web:/var/www/
     restart: always
@@ -130,5 +130,5 @@ volumes:
       device: /home/${USER}/data/mariadb
 
 networks:
-    inception:
-        driver: bridge
+  inception:
+    driver: bridge

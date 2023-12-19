@@ -4,5 +4,6 @@ RUN	apk update && apk upgrade && apk add --no-cache nginx
 
 COPY requirements/bonus/website/conf/default.conf /etc/nginx/http.d/
 
-EXPOSE 69
+EXPOSE 80
+
 CMD ["nginx", "-g", "daemon off;"]
