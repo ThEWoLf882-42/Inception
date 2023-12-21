@@ -3,6 +3,9 @@ FROM alpine:3.19.0
 ARG FTP_USR \
     FTP_PWD
 
+ENV FTP_USR=${FTP_USR} \
+	FTP_PWD=${FTP_PWD}
+
 RUN apk update && apk upgrade && \
     apk add --no-cache vsftpd
 
