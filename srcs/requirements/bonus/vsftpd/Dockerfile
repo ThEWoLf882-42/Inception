@@ -18,10 +18,11 @@ RUN sed -i "s|#chroot_local_user=YES|chroot_local_user=YES|g"  /etc/vsftpd/vsftp
 RUN echo "allow_writeable_chroot=YES" >> /etc/vsftpd/vsftpd.conf &&\
     echo 'seccomp_sandbox=NO' >> /etc/vsftpd/vsftpd.conf && \
     echo 'pasv_enable=YES' >> /etc/vsftpd/vsftpd.conf
-    # usermod -d /var/www/html/wordpress ${FTP_USR} \
-    # chmod 777 /var/www/html/wordpress
 
 WORKDIR /var/www
+
+RUN usermod -d /var/www ${FTP_USR} \
+    chmod 777 /var/www
 
 EXPOSE 21
 
