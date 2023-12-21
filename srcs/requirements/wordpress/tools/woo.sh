@@ -15,6 +15,7 @@ wp config set WP_REDIS_DATABASE 0 --allow-root
 wp config set WP_CACHE true --allow-root
 wp user create "${WP_USER}" "${WP_UEMAIL}" --path=/var/www --user_pass="${WP_PASS}" --role=editor
 
+wp plugin update --path=/var/www --all --allow-root
 wp plugin install redis-cache --path=/var/www --force --activate --allow-root
 wp redis enable --path=/var/www --allow-root
 
