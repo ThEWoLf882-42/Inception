@@ -57,6 +57,8 @@ services:
     build:
       context: .
       dockerfile: requirements/bonus/redis/Dockerfile
+    env_file:
+      - .env
     container_name: redis
     depends_on:
       - wordpress
