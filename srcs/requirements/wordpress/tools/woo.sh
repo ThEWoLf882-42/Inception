@@ -24,5 +24,8 @@ else
     echo "redis-cache is already installed"
 fi
 
+chown -R www-data:www-data /var/www/
+chmod -R 777 /var/www/
+
 # Start PHP-FPM in the foreground
 exec $@
