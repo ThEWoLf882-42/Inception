@@ -9,7 +9,7 @@ wp config create --path=/var/www \
 
 wp core install --path=/var/www --url=agimi.42.fr --title="${WP_TITLE}" --admin_user="${WP_ADMIN}" --admin_password="${WP_PASS}" --admin_email="${WP_EMAIL}"
 
-wp config set WP_REDIS_PORT "6379" --allow-root
+wp config set WP_REDIS_PORT 6379 --allow-root
 wp config set WP_REDIS_HOST "redis" --allow-root
 wp config set WP_REDIS_DATABASE 0 --allow-root
 wp config set WP_CACHE true --allow-root
