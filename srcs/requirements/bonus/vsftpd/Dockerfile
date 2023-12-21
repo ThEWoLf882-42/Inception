@@ -17,7 +17,8 @@ RUN sed -i "s|#chroot_local_user=YES|chroot_local_user=YES|g"  /etc/vsftpd/vsftp
 
 RUN echo "allow_writeable_chroot=YES" >> /etc/vsftpd/vsftpd.conf &&\
     echo 'seccomp_sandbox=NO' >> /etc/vsftpd/vsftpd.conf && \
-    echo 'pasv_enable=YES' >> /etc/vsftpd/vsftpd.conf
+    echo 'pasv_enable=YES' >> /etc/vsftpd/vsftpd.conf \
+    chown -R ${FTP_USR}:${FTP_USR} /var/www
 
 WORKDIR /var/www
 
