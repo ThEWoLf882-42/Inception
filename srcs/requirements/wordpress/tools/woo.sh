@@ -11,8 +11,8 @@ wp core install --path=/var/www --url=agimi.42.fr --title="${WP_TITLE}" --admin_
 
 wp config set WP_REDIS_PORT "6379" --allow-root
 wp config set WP_REDIS_HOST "redis" --allow-root
-wp config set WP_REDIS_DATABASE 0 --allow-root
-wp config set WP_CACHE true --allow-root
+# wp config set WP_REDIS_DATABASE 0 --allow-root
+# wp config set WP_CACHE true --allow-root
 wp user create "${WP_USER}" "${WP_UEMAIL}" --path=/var/www --user_pass="${WP_PASS}" --role=editor
 wp plugin is-installed redis-cache --allow-root
 
