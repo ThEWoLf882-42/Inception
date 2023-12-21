@@ -24,6 +24,8 @@ RUN echo "allow_writeable_chroot=YES" >> /etc/vsftpd/vsftpd.conf &&\
 
 WORKDIR /var/www
 
+RUN chown -R ${FTP_USR}:${FTP_USR} /var/www
+
 EXPOSE 21
 
 CMD [ "/usr/sbin/vsftpd", "/etc/vsftpd/vsftpd.conf" ]
