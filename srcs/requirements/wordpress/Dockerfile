@@ -1,21 +1,4 @@
 FROM alpine:3.19.0
-ARG DB_NAME \
-	DB_USER \
-	DB_PASS \
-	WP_TITLE \
-	WP_ADMIN \
-	WP_PASS \
-	WP_EMAIL \
-	WP_UEMAIL \
-	WP_USER
-
-ENV WP_TITLE=${WP_TITLE} \
-	WP_ADMIN=${WP_ADMIN} \
-	WP_PASS=${WP_PASS} \
-	WP_EMAIL=${WP_EMAIL} \
-	WP_UEMAIL=${WP_UEMAIL} \
-	WP_USER=${WP_USER}
-
 
 RUN apk update && apk upgrade && apk add --no-cache \
 	php \
