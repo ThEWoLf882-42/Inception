@@ -18,8 +18,8 @@ wp user create "${WP_USER}" "${WP_UEMAIL}" --path=/var/www --user_pass="${WP_PAS
 wp plugin install redis-cache --path=/var/www --force --activate --allow-root
 wp redis enable --path=/var/www --allow-root
 
-chown -R www-data:www-data /var/www/
-chmod -R 777 /var/www/
+# chown -R www-data:www-data /var/www/
+# chmod -R 777 /var/www/
 
 # Start PHP-FPM in the foreground
 exec $@
