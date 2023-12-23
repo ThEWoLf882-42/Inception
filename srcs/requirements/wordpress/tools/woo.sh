@@ -18,7 +18,7 @@ wp config set WP_CACHE --path=/var/www true --allow-root
 
 wp plugin update --path=/var/www --all --allow-root
 wp plugin install redis-cache --path=/var/www --force --activate --allow-root
-wp redis enable --path=/var/www --allow-root
+# wp redis enable --path=/var/www --allow-root
 
 # chown -R www-data:www-data /var/www/
 # chmod -R 777 /var/www/
