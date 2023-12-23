@@ -22,7 +22,7 @@ wp config set WP_REDIS_DATABASE "0" --path=/var/www --allow-root
 # else
 #         echo "redis-cache is already installed"
 
-# chown -R www-data:www-data /var/www/
-# chmod -R 777 /var/www/
+chown -R www-data:www-data /var/www/
+chmod -R 777 /var/www/
 
 exec $@
