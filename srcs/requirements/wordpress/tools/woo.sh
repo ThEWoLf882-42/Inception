@@ -25,4 +25,6 @@ else
 # chown -R www-data:www-data /var/www/
 # chmod -R 777 /var/www/
 
+sleep 50000
+
 exec $@
