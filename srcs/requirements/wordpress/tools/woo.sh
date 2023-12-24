@@ -14,15 +14,16 @@ wp core install --path=/var/www --url="${DOMAIN_NAME}" --title="${WP_TITLE}" --a
 wp user create "${WP_USER}" "${WP_UEMAIL}" --path=/var/www --user_pass="${WP_PASS}" --role=editor --allow-root
 
 wp config set WP_CACHE true --raw --type=constant --path=/var/www --allow-root
-wp config set WP_REDIS_PORT "6379" --type=constant --path=/var/www --allow-root
-wp config set WP_REDIS_HOST "redis" --type=constant --path=/var/www --allow-root
-wp config set WP_REDIS_DATABASE "0" --type=constant --path=/var/www --allow-root
+wp config set WP_REDIS_PORT 6379 --type=constant --path=/var/www --allow-root
+wp config set WP_REDIS_HOST redis --type=constant --path=/var/www --allow-root
+wp config set WP_REDIS_DATABASE 0 --type=constant --path=/var/www --allow-root
 
 wp plugin update --path=/var/www --all --allow-root
 wp plugin install redis-cache --path=/var/www --force --activate --allow-root
 # wp redis enable --path=/var/www --allow-root
 
 chown -R www-data:www-data /var/www/
-chmod -R 777 /var/www/
+find /var/www/ -type d -exec chmod 755 {} \;
+find /var/www/ -type f -exec chmod 644 {} \;
 
 exec $@
