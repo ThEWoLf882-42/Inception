@@ -3,6 +3,7 @@
 rm -rf /var/www/wp-config.php
 
 chmod -R 755 /var/www/
+chown -R www-data:www-data /var/www/wp-content
 
 wp config create --path=/var/www \
 				--allow-root \
