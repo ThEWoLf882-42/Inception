@@ -16,6 +16,7 @@ wp config set WP_REDIS_PORT "6379" --type=constant --path=/var/www --allow-root
 wp config set WP_REDIS_HOST "redis" --type=constant --path=/var/www --allow-root
 wp config set WP_REDIS_DATABASE "0" --type=constant --path=/var/www --allow-root
 
+wp plugin update --all --allow-root
 wp plugin install redis-cache --force --activate --allow-root
 wp redis enable --allow-root
 
