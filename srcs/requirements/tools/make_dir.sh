@@ -9,8 +9,8 @@ fi
 
 # Ensure directories exist
 [ ! -d "${HOME_DIR}/data" ] && mkdir "${HOME_DIR}/data" && chmod 777 "${HOME_DIR}/data"
-[ ! -d "${HOME_DIR}/data/mariadb" ] && mkdir "${HOME_DIR}/data/mariadb" && chmod 777 "${HOME_DIR}/data/mariadb"
-[ ! -d "${HOME_DIR}/data/wordpress" ] && mkdir "${HOME_DIR}/data/wordpress" && chmod 777 "${HOME_DIR}/data/wordpress"
-[ ! -d "${HOME_DIR}/data/portainer" ] && mkdir "${HOME_DIR}/data/portainer" && chmod 777 "${HOME_DIR}/data/portainer"
+[ ! -d "${HOME_DIR}/data/mariadb" ] && mkdir "${HOME_DIR}/data/mariadb" #&& chmod 777 "${HOME_DIR}/data/mariadb"
+[ ! -d "${HOME_DIR}/data/wordpress" ] && mkdir "${HOME_DIR}/data/wordpress" #&& chmod 777 "${HOME_DIR}/data/wordpress"
+[ ! -d "${HOME_DIR}/data/portainer" ] && mkdir "${HOME_DIR}/data/portainer" #&& chmod 777 "${HOME_DIR}/data/portainer"
 
 exit 0
