@@ -24,8 +24,8 @@ wp plugin update --path=/var/www --all --allow-root
 wp plugin install redis-cache --path=/var/www --force --activate --allow-root
 # wp redis enable --path=/var/www --allow-root
 
-chown -R www-data:www-data /var/www/wp-content
-find /var/www/wp-content -type d -exec chmod 755 {} \;
-find /var/www/wp-content -type f -exec chmod 644 {} \;
+chown -R www-data:www-data /var/www/
+find /var/www/ -type d -exec chmod 755 {} \;
+find /var/www/ -type f -exec chmod 644 {} \;
 
 exec $@
