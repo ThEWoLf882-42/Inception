@@ -1,5 +1,7 @@
 #!/bin/sh
 
+rm -rf /var/www/wp-config.php
+
 wp config create --path=/var/www \
 				--allow-root \
 				--dbname="${DB_NAME}" \
