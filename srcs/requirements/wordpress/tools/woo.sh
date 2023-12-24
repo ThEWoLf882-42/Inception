@@ -22,10 +22,11 @@ wp config set WP_REDIS_READ_TIMEOUT 1 --type=constant --path=/var/www --allow-ro
 
 wp plugin update --path=/var/www --all --allow-root
 wp plugin install redis-cache --path=/var/www --force --activate --allow-root
-# wp redis enable --path=/var/www --allow-root
+wp redis enable --path=/var/www --allow-root
 
 chown -R www-data:www-data /var/www/
 find /var/www/ -type d -exec chmod 755 {} \;
 find /var/www/ -type f -exec chmod 644 {} \;
+chmod -R 775 /var/www/wp-content/
 
 exec $@
