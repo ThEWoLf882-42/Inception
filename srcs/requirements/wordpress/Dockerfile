@@ -14,6 +14,7 @@ RUN apk update && apk upgrade && apk add --no-cache \
 	php-xml \
 	php-zip \
 	php-redis \
+	php-tokenizer\
 	php-phar \
 	wget \
 	unzip && \
