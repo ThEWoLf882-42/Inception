@@ -16,7 +16,7 @@ wp user create "${WP_USER}" "${WP_UEMAIL}" --path=/var/www --user_pass="${WP_PAS
 # wp config set WP_DEBUG true --type=constant --path=/var/www --allow-root
 # wp config set WP_DEBUG_LOG true --type=constant --path=/var/www --allow-root
 # wp config set WP_DEBUG_DISPLAY false --type=constant --path=/var/www --allow-root
-# wp config set WP_MEMORY_LIMIT 265M --type=constant --path=/var/www --allow-root
+# wp config set WP_MEMORY_LIMIT 256M --type=constant --path=/var/www --allow-root
 wp config set WP_CACHE true --raw --type=constant --path=/var/www --allow-root
 wp config set WP_REDIS_PORT 6379 --type=constant --path=/var/www --allow-root
 wp config set WP_REDIS_HOST redis --type=constant --path=/var/www --allow-root
@@ -31,6 +31,7 @@ wp redis enable --path=/var/www --allow-root
 chown -R www-data:www-data /var/www/
 find /var/www/ -type d -exec chmod 755 {} \;
 find /var/www/ -type f -exec chmod 644 {} \;
+chmod 600 /var/www/wp-config.php
 chmod -R 775 /var/www/wp-content/
 
 exec $@
