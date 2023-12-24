@@ -10,15 +10,10 @@ if [ ! -f /var/www/wp-config.php ]; then
             --dbhost="mariadb"
 fi
 
-# Check if Wordpress is installed, if not install it.
-if ! $(wp core is-installed --path=/var/www --allow-root); then
-    wp core install --path=/var/www --url="agimi.42.fr" --title="${WP_TITLE}" --admin_user="${WP_ADMIN}" --admin_password="${WP_PASS}" --admin_email="${WP_EMAIL}"
-fi
+wp core install --path=/var/www --url="agimi.42.fr" --title="${WP_TITLE}" --admin_user="${WP_ADMIN}" --admin_password="${WP_PASS}" --admin_email="${WP_EMAIL}"
 
 # Check if a Wordpress user exists, if not create it.
-if ! $(wp user get "${WP_USER}" --path=/var/www --allow-root > /dev/null 2>&1); then
-    wp user create "${WP_USER}" "${WP_UEMAIL}" --path=/var/www --user_pass="${WP_PASS}" --role=editor --allow-root
-fi
+wp user create "${WP_USER}" "${WP_UEMAIL}" --path=/var/www --user_pass="${WP_PASS}" --role=editor --allow-root
 
 # Setup Redis configurations.
 wp config set WP_CACHE true --raw --type=constant --path=/var/www --allow-root
@@ -37,4 +32,4 @@ chown -R www-data:www-data /var/www/
 find /var/www/ -type d -exec chmod 755 {} \;
 find /var/www/ -type f -exec chmod 644 {} \;
 
-exec "$@"
+exec $@
