@@ -18,7 +18,7 @@ wp user create "${WP_USER}" "${WP_UEMAIL}" --path=/var/www --user_pass="${WP_PAS
 wp config set FS_METHOD direct --type=constant --path=/var/www --allow-root
 wp config set WP_MEMORY_LIMIT 256M --type=constant --path=/var/www --allow-root
 wp config set WP_CACHE true --raw --type=constant --path=/var/www --allow-root
-wp config set WP_REDIS_PORT "6379" --type=constant --path=/var/www --allow-root
+wp config set WP_REDIS_PORT 6379 --path=/var/www --allow-root
 wp config set WP_REDIS_HOST redis --type=constant --path=/var/www --allow-root
 wp config set WP_REDIS_DATABASE 0 --type=constant --path=/var/www --allow-root
 wp config set WP_REDIS_TIMEOUT 1 --type=constant --path=/var/www --allow-root
