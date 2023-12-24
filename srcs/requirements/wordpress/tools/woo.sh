@@ -1,10 +1,5 @@
 #!/bin/sh
 
-# Wait until the mariadb is ready before attempting to create wp-config.
-while ! mysqladmin ping -h"mariadb" --silent; do
-    sleep 1
-done
-
 # Check if wp-config.php exists, if not create it.
 if [ ! -f /var/www/wp-config.php ]; then
     wp config create --path=/var/www \
