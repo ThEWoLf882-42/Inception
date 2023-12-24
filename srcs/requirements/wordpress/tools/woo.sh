@@ -13,6 +13,10 @@ wp core install --path=/var/www --url="${DOMAIN_NAME}" --title="${WP_TITLE}" --a
 
 wp user create "${WP_USER}" "${WP_UEMAIL}" --path=/var/www --user_pass="${WP_PASS}" --role=editor --allow-root
 
+wp config set WP_DEBUG true --type=constant --path=/var/www --allow-root
+wp config set WP_DEBUG_LOG true --type=constant --path=/var/www --allow-root
+wp config set WP_DEBUG_DISPLAY false --type=constant --path=/var/www --allow-root
+wp config set WP_MEMORY_LIMIT 265M --type=constant --path=/var/www --allow-root
 wp config set WP_CACHE true --raw --type=constant --path=/var/www --allow-root
 wp config set WP_REDIS_PORT 6379 --type=constant --path=/var/www --allow-root
 wp config set WP_REDIS_HOST redis --type=constant --path=/var/www --allow-root
