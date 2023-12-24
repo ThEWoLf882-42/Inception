@@ -2,6 +2,8 @@
 
 rm -rf /var/www/wp-config.php
 
+chmod -R 755 /var/www/
+
 wp config create --path=/var/www \
 				--allow-root \
 				--dbname="${DB_NAME}" \
@@ -25,6 +27,5 @@ wp plugin update --path=/var/www --all --allow-root
 wp plugin install redis-cache --path=/var/www --force --activate --allow-root
 wp redis enable --path=/var/www --allow-root
 
-chmod -R 755 /var/www/
 
 exec $@
