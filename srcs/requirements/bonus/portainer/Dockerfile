@@ -4,7 +4,7 @@ RUN apk update && apk upgrade && apk add --no-cache \
 	wget \
 	tar
 
-RUN wget https://github.com/portainer/portainer/releases/download/2.19.4/portainer-2.19.4-linux-amd64.tar.gz \
+RUN wget https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz \
 	&& tar xvzf /portainer-2.19.4-linux-amd64.tar.gz \
 	&& rm -rf portainer-2.19.4-linux-amd64.tar.gz
 
