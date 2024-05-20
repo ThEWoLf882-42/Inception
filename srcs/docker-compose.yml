@@ -1,0 +1,144 @@
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: requirements/nginx/Dockerfile
+    container_name: nginx
+    depends_on:
+      - wordpress
+    volumes:
+      - ./requirements/nginx/conf/:/etc/nginx/http.d/
+      - wp-volume:/var/www/
+    env_file:
+      - .env
+    ports:
+      - "443:443"
+    networks:
+      - inception
+    restart: always
+
+  mariadb:
+    build:
+      context: .
+      dockerfile: requirements/mariadb/Dockerfile
+    container_name: mariadb
+    volumes:
+      - db-volume:/var/lib/mysql
+    env_file:
+      - .env
+    expose:
+      - 3306
+    networks:
+      - inception
+    restart: always
+
+  wordpress:
+    build:
+      context: .
+      dockerfile: requirements/wordpress/Dockerfile
+    container_name: wordpress
+    depends_on:
+      - mariadb
+    volumes:
+      - wp-volume:/var/www/
+    env_file:
+      - .env
+    expose:
+      - 9000
+    networks:
+      - inception
+    restart: always
+
+  # redis:
+  #   build:
+  #     context: .
+  #     dockerfile: requirements/bonus/redis/Dockerfile
+  #   container_name: redis
+  #   depends_on:
+  #     - wordpress
+  #   ports:
+  #     - "6379:6379"
+  #   networks:
+  #     - inception
+  #   restart: always
+
+  # vsftpd:
+  #   build:
+  #     context: .
+  #     dockerfile: requirements/bonus/vsftpd/Dockerfile
+  #     args:
+  #       FTP_USR: ${FTP_USR}
+  #       FTP_PWD: ${FTP_PWD}
+  #   container_name: vsftpd
+  #   depends_on:
+  #     - wordpress
+  #   ports:
+  #     - "21:21"
+  #   volumes:
+  #     - wp-volume:/var/www/
+  #   networks:
+  #     - inception
+  #   restart: always
+
+  # adminer:
+  #   build:
+  #     context: .
+  #     dockerfile: requirements/bonus/adminer/Dockerfile
+  #   container_name: adminer
+  #   depends_on:
+  #     - mariadb
+  #   ports:
+  #     - "8080:8080"
+  #   networks:
+  #     - inception
+  #   restart: always
+
+  # website:
+  #   build:
+  #     context: .
+  #     dockerfile: requirements/bonus/website/Dockerfile
+  #   container_name: website
+  #   ports:
+  #     - "6969:6969"
+  #   networks:
+  #     - inception
+  #   volumes:
+  #     - ./requirements/bonus/website/conf/web:/var/www/
+  #   restart: always
+
+  # portainer:
+  #   build:
+  #     context: .
+  #     dockerfile: requirements/bonus/portainer/Dockerfile
+  #   container_name: portainer
+  #   ports:
+  #     - "9443:9443"
+  #   networks:
+  #     - inception
+  #   volumes:
+  #     - portainer:/data
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   restart: always
+
+volumes:
+  wp-volume:
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/${USER}/data/wordpress
+
+  db-volume:
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/${USER}/data/mariadb
+  
+  portainer:
+   driver_opts:
+    o: bind
+    type: none
+    device: /home/${USER}/data/portainer
+
+networks:
+  inception:
+    driver: bridge
